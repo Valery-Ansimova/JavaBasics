@@ -16,19 +16,28 @@ public class LoopMetods {
         System.out.println("Calculated Number = " + number);
 
         int sum = findSum(2, 5, 3);
-        System.out.println ( "Sum = " + sum);
+        System.out.println("Sum = " + sum);
 
         String resultOfEvaluating = evaluateNumber(17);
         System.out.println("Evaluate result = " + resultOfEvaluating);
 
         boolean resultOfChecking = checkExpression(2, 4);
-        System.out.println("Result of checking = " + resultOfChecking );
+        System.out.println("Result of checking = " + resultOfChecking);
 
         boolean checkResult = checkInequality(6, 3, 15);
         System.out.println("Result of checking inequality = " + checkResult);
 
         Integer numberOfSerial = determineSerialNumber(7, 5, 7, 7);
         System.out.println("Serial Number = " + numberOfSerial);
+
+        String description = defineDescription(5);
+        System.out.println("Descprition = " + description);
+
+        String yearSeason = determineYearSeason(9);
+        System.out.println("Year Season = " + yearSeason);
+
+        double actionResult = executeAction(2,3,1);
+        System.out.println("Action Result = " + actionResult);
 
     }
 
@@ -52,7 +61,7 @@ public class LoopMetods {
 
     private static int calculateNumber(int number) {
         if (number > 0) {
-           number = number + 1;
+            number = number + 1;
         }
         if (number < 0) {
             number = number - 2;
@@ -115,7 +124,7 @@ public class LoopMetods {
 
     private static boolean checkInequality(int a, int b, int c) {
         boolean checkResult;
-        if (a < b && b < c ) {
+        if (a < b && b < c) {
             checkResult = true;
         } else {
             checkResult = false;
@@ -129,7 +138,7 @@ public class LoopMetods {
             serialNumber = 1;
         } else if (a != b && a == c && c == d) {
             serialNumber = 2;
-        } else  if (a == b && b != c && b == d) {
+        } else if (a == b && b != c && b == d) {
             serialNumber = 3;
         } else if (a == b && b == c && c != d) {
             serialNumber = 4;
@@ -137,4 +146,77 @@ public class LoopMetods {
         return serialNumber;
     }
 
+    private static String defineDescription(int k) {
+        String description;
+        switch (k) {
+            case 1:
+                description = "Badly";
+                break;
+            case 2:
+                description = "Unsatisfactory";
+                break;
+            case 3:
+                description = "Satisfactorily";
+                break;
+            case 4:
+                description = "good";
+                break;
+            case 5:
+                description = "Excellent";
+                break;
+            default:
+                description = "Error";
+                break;
+        }
+        return description;
+    }
+
+    private static String determineYearSeason(int monthNumber) {
+        String yearSeason;
+        switch (monthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                yearSeason = "winter";
+                break;
+            case 3:
+            case 4:
+            case 5:
+                yearSeason = "spring";
+                break;
+            case 6:
+            case 7:
+            case 8:
+                yearSeason = "summer";
+                break;
+            case 9:
+            case 10:
+            case 11:
+                yearSeason = "autumn";
+                break;
+            default:
+                yearSeason = "error: the number is not in allowed range";
+                break;
+        }
+        return yearSeason;
+    }
+
+    private static double executeAction(int n, int a, int b) {
+        double actionResult = 0;
+        switch (n) {
+            case 1:
+                actionResult = a + b;
+                break;
+            case 2:
+                actionResult = a - b;
+                break;
+            case 3:
+                actionResult = a * b;
+                break;
+            case 4:
+                actionResult = a / b;
+                break;
+        }
+        return actionResult;
+    }
 }
